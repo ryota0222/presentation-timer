@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { LogFetchedDB, LogItem } from "~/types/log";
+import { LogFetchedDB } from "~/types/log";
 
 definePageMeta({
   middleware: "auth",
@@ -16,13 +16,7 @@ const { data: logs } = await useAsyncData("log", async () => {
     .order("created_at", { ascending: false })
     .limit(1);
   console.info("get init data:");
-  console.log(data);
-  return data.map((item) => {
-    return {
-      ...item,
-      action: JSON.parse(item.action),
-    };
-  }) as LogItem[];
+  return data;
 });
 
 onMounted(() => {
@@ -31,10 +25,7 @@ onMounted(() => {
     .on("*", (payload) => {
       console.info("Change received: ", payload);
       if (logs) {
-        logs.value.unshift({
-          ...payload.new,
-          action: JSON.parse(payload.new.action),
-        });
+        logs.value.unshift(payload.new);
       }
     })
     .subscribe();
@@ -43,6 +34,8 @@ onMounted(() => {
 onUnmounted(() => {
   client.removeAllSubscriptions();
 });
+
+console.log(logs);
 </script>
 
 <template>
