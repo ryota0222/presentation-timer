@@ -67,7 +67,7 @@ watchEffect(() => {
     <button @click="handleRestart">Restart</button><br />
     <button @click="handleReset">Reset</button>
     <hr />
-    <ul>
+    <ul v-if="logs.length">
       <li v-for="log of logs" :key="log.id">
         {{ log.action }}
       </li>
