@@ -1,11 +1,9 @@
 import { LogFetchedDB, Action } from "~/types/log";
-import { useStopwatch } from "vue-timer-hook";
 // 設定値
 const OFFSET_TIME_STAMP = 0;
 const AUTO_START = false;
 
 export default function () {
-  const stopwatch = useStopwatch(OFFSET_TIME_STAMP, AUTO_START);
   const user = useSupabaseUser();
   const { insertRow } = useSupabaseDB();
   // ログデータの生成
@@ -38,6 +36,5 @@ export default function () {
     handlePause,
     handleRestart,
     handleReset,
-    stopwatch,
   };
 }

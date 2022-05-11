@@ -1,22 +1,23 @@
 <script setup lang="ts">
 import { Action, LogFetchedDB } from "~/types/log";
-const logs = useState<LogFetchedDB[]>("logs", () => []);
+import { useStopwatch } from "vue-timer-hook";
+type Props = {
+  offsetTimeStamp: number;
+  initialLog: LogFetchedDB[];
+};
+const props = defineProps<Props>();
+const AUTO_START = false;
+const logs = useState<LogFetchedDB[]>("logs", () => props.initialLog);
+const stopwatch = useStopwatch(props.offsetTimeStamp, AUTO_START);
 // logの更新
 const updateLog = (data: LogFetchedDB) => {
-  // const copy = logs.value.slice();
-  // copy.unshift(data);
   logs.value.unshift(data);
 };
-const { handleStart, handlePause, handleRestart, handleReset, stopwatch } =
-  useTimer();
-const { fetchLogData, subscribeLogData, removeSubscribeLogData } =
-  useSupabaseDB();
+const { handleStart, handlePause, handleRestart, handleReset } = useTimer();
+const { subscribeLogData, removeSubscribeLogData } = useSupabaseDB();
 // マウント時、ログ情報の監視
 onMounted(async () => {
-  const res = await fetchLogData();
-  logs.value.unshift(res[0]);
   const callback = (data: LogFetchedDB) => {
-    console.log("call");
     if (logs) {
       updateLog(data);
     }

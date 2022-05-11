@@ -6,7 +6,7 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   buildModules: ["@nuxtjs/supabase"],
-  css: ["@/assets/css/tailwind.css"],
+  css: ["~/assets/css/tailwind.css"],
   build: {
     postcss: {
       postcssOptions: {
