@@ -11,6 +11,7 @@ export type Action =
     }
   | {
       type: "pause";
+      start_at: string;
     }
   | {
       type: "restart";

@@ -18,6 +18,7 @@ const { subscribeLogData, removeSubscribeLogData } = useSupabaseDB();
 // マウント時、ログ情報の監視
 onMounted(async () => {
   const callback = (data: LogFetchedDB) => {
+    console.log(data);
     if (logs) {
       updateLog(data);
     }
@@ -64,13 +65,13 @@ watchEffect(() => {
     </div>
     <p>{{ stopwatch.isRunning.value ? "Running" : "Not running" }}</p>
     <button @click="handleStart">Start</button><br />
-    <button @click="handlePause">Pause</button><br />
+    <button @click="() => handlePause(logs[0].created_at)">Pause</button><br />
     <button @click="handleRestart">Restart</button><br />
     <button @click="handleReset">Reset</button>
     <hr />
     <ul v-if="logs.length">
       <li v-for="log of logs" :key="log.id">
-        {{ log.action }}
+        {{ log.created_at }}: {{ log.action }}
       </li>
     </ul>
   </div>

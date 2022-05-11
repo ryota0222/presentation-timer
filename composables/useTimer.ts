@@ -18,8 +18,10 @@ export default function () {
   /**
    * 停止処理
    */
-  const handlePause = () =>
-    insertRow<Partial<LogFetchedDB>>([generateLogData({ type: "pause" })]);
+  const handlePause = (start_at: string) =>
+    insertRow<Partial<LogFetchedDB>>([
+      generateLogData({ type: "pause", start_at }),
+    ]);
   /**
    * リスタート処理
    */
