@@ -43,5 +43,6 @@ console.log(logs);
     <ul>
       <li v-for="log of logs" :key="log.id">{{ log.action.type }}</li>
     </ul>
+    <Timer />
   </div>
 </template>

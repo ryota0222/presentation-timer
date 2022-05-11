@@ -5516,6 +5516,11 @@ vue-router@^4.0.14:
   dependencies:
     "@vue/devtools-api" "^6.0.0"
 
+vue-timer-hook@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/vue-timer-hook/-/vue-timer-hook-1.0.0.tgz#9a315a83a8d776ed5c75ab0f82e5846adcd57844"
+  integrity sha512-m7YMkrU2788NHDkAC38Kr+QyMkZiWE4F7yWaQKNugf9ZeMucnIHTtwPkAzUtq5q0dw+M5xGdvnQapzSdquhoAQ==
+
 vue@^3.2.33:
   version "3.2.33"
   resolved "https://registry.yarnpkg.com/vue/-/vue-3.2.33.tgz#7867eb16a3293a28c4d190a837bc447878bd64c2"
