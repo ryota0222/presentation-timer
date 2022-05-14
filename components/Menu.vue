@@ -29,10 +29,12 @@ const logout = async () => {
   router.push("/");
 };
 watchEffect(() => {
-  if (selected.value.name === "dark") {
-    document.documentElement.classList.add("dark");
-  } else {
-    document.documentElement.classList.remove("dark");
+  if (window) {
+    if (selected.value.name === "dark") {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
   }
 });
 </script>
