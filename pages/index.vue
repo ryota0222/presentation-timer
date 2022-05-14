@@ -35,7 +35,7 @@ watchEffect(() => {
         class="flex justify-center items-center bg-white dark:bg-black p-3 rounded-md border-2 border-black dark:border-white"
       >
         <img src="@/assets/images/google.svg" alt="google" class="mr-4" />
-        <span class="text-white">Google</span>
+        <span class="text-black dark:text-white">Google</span>
       </button>
     </div>
   </div>
