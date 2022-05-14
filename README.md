@@ -1,42 +1,29 @@
-# Nuxt 3 Minimal Starter
+# :alarm_clock: Presentation Watch
 
-Look at the [nuxt 3 documentation](https://v3.nuxtjs.org) to learn more.
+プレゼンテーションの時間管理を行うアプリケーションです。
 
-## Setup
+## このアプリケーションの存在意義
 
-Make sure to install the dependencies:
+勉強会や発表会を主催する際に、時間管理で以下の課題が上がったため。
 
-```bash
-# yarn
-yarn install
+- 発表の時間の計測を行いたい
+- アラーム音を鳴らすことや、発表者に主催側から声がけをするのは避けたい
+- 発表者に自発的に時間の管理をしてほしい
 
-# npm
-npm install
+## このアプリケーションでできること
 
-# pnpm
-pnpm install --shamefully-hoist
-```
+このアプリケーションでは、**複数台で同じアカウントでログインをする**ことで、時間の管理を同期的に行うことができます。また、時間の測り方はカウントダウンではなく、**カウントアップ**を採用しています。理由としては、持ち時間をオーバーしても特に問題がないことと、カウントダウン式の場合、発表者の持ち時間を把握し、セットするという手間が発生するためです。
+カウントアップ式の場合、発表者自身が持ち時間を把握するだけでいいので主催側のコストが低いと考えました。
 
-## Development Server
+### 操作
 
-Start the development server on http://localhost:3000
+- カウント開始：0 秒からカウントアップをすることができます。
+- カウント停止：0 秒からカウントアップをすることができます。
+- カウント再開：停止した時間からカウントアップを再開します。
+- リセット：カウントしていた時間を停止し、0 秒に変更します。
 
-```bash
-npm run dev
-```
+![Group 4](https://user-images.githubusercontent.com/63274288/168437965-13b7dd7b-208d-453e-8cd2-1d9ee73b5e85.png)
 
-## Production
+## その他
 
-Build the application for production:
-
-```bash
-npm run build
-```
-
-Locally preview production build:
-
-```bash
-npm run preview
-```
-
-Checkout the [deployment documentation](https://v3.nuxtjs.org/docs/deployment) for more information.
+- [:rocket: フレームワークについて](docs/ABOUT-FRAMEWORK.md)
