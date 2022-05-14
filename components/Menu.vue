@@ -1,4 +1,5 @@
-<script setup>
+<script setup lang="ts">
+import { themes } from "@/consts/config";
 import {
   Menu,
   MenuButton,
@@ -9,25 +10,16 @@ import {
   RadioGroupOption,
 } from "@headlessui/vue";
 import { ref } from "vue";
-const themes = [
-  {
-    name: "light",
-    description: "テーマをライトモードに設定します",
-  },
-  {
-    name: "dark",
-    description: "テーマをダークモードに設定します",
-  },
-];
-
 const selected = ref(themes[0]);
 const router = useRouter();
 const client = useSupabaseClient();
 const user = useSupabaseUser();
+// ログアウト処理
 const logout = async () => {
   await client.auth.signOut();
   router.push("/");
 };
+// テーマが切り替わったらhtmlタグのクラス切り替え
 watchEffect(() => {
   if (window) {
     if (selected.value.name === "dark") {

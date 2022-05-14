@@ -4,6 +4,7 @@ type Props = {
   type: "outlined" | "filled";
 };
 const props = defineProps<Props>();
+// クラス名をtypeによって切り替え
 const classes =
   props.type === "filled"
     ? "bg-black text-white dark:bg-white dark:text-black"
