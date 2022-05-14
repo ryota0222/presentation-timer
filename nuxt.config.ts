@@ -12,6 +12,30 @@ export default defineNuxtConfig({
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { hid: "description", name: "description", content: "description" },
     ],
+    link: [
+      {
+        rel: "apple-touch-icon",
+        sizes: "152x152",
+        href: "/apple-touch-icon.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "32x32",
+        href: "/favicon-32x32.png",
+      },
+      {
+        rel: "icon",
+        type: "image/png",
+        sizes: "16x16",
+        href: "/favicon-16x16.png",
+      },
+      {
+        rel: "manifest",
+        href: "/site.webmanifest",
+      },
+      { rel: "icon", type: "image/x-icon", href: "/favicon.ico" },
+    ],
   },
   buildModules: ["@nuxtjs/supabase"],
   css: ["~/assets/css/tailwind.css"],
