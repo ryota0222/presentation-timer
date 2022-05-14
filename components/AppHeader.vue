@@ -1,16 +1,12 @@
-<script setup lang="ts">
-const router = useRouter();
-const client = useSupabaseClient();
-const user = useSupabaseUser();
-const logout = async () => {
-  await client.auth.signOut();
-  router.push("/");
-};
-</script>
-
 <template>
-  <div>
-    <h1>presentation-timer</h1>
-    <button v-if="user" class="u-text-white" @click="logout">Logout</button>
+  <div class="flex items-center justify-between w-full h-10">
+    <h1 class="app-title">presentation-timer</h1>
+    <Menu />
   </div>
 </template>
+
+<style scoped>
+.app-title {
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+}
+</style>

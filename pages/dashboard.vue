@@ -4,12 +4,12 @@ definePageMeta({
   middleware: "auth",
 });
 const { $dayjs } = useNuxtApp();
-const { fetchLogData, subscribeLogData, removeSubscribeLogData } =
-  useSupabaseDB();
+const { fetchLogData } = useSupabaseDB();
 const initialLog = useState<LogFetchedDB[] | undefined>(
   "initialLog",
   () => undefined
 );
+
 // マウント時、データ取得
 onMounted(async () => {
   const res = await fetchLogData();
@@ -42,7 +42,7 @@ const getTimeStamp = () => {
 </script>
 
 <template>
-  <div v-if="initialLog !== undefined">
+  <div v-if="initialLog !== undefined" class="flex justify-center">
     <Timer :initial-log="initialLog" :offset-time-stamp="getTimeStamp()" />
   </div>
 </template>
