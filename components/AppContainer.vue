@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const title = "Presentation Watch";
 const description =
-  "プレゼンテーションの時間管理を行うアプリケーションです。同じアカウントでログインしていただくと同期的に時間の管理が可能です。";
+  "プレゼンテーションの時間管理を行うアプリケーションです。同じアカウントでログインしていただくと複数台でも同期的に時間の管理が可能です。";
 const url = "https://presentation-timer.ryotanny.com";
 </script>
 
@@ -17,6 +17,11 @@ const url = "https://presentation-timer.ryotanny.com";
       <Meta property="og:description" :content="description" />
       <Meta property="og:image" content="/og-image.png" />
       <Meta property="og:site_name" :content="title" />
+      <!-- pwa（meta） -->
+      <Meta name="mobile-web-app-capable" content="yes" />
+      <Meta name="apple-mobile-web-app-capable" content="yes" />
+      <Meta name="apple-mobile-web-app-status-bar-style" content="black" />
+      <Meta name="apple-mobile-web-app-title" :content="title" />
       <Link
         rel="apple-touch-icon"
         size="152x152"
@@ -36,7 +41,7 @@ const url = "https://presentation-timer.ryotanny.com";
       />
       <Link rel="manifest" href="/site.webmanifest" />
       <Link rel="icon" type="image/x-icon" href="/favicon.ico" />
-      <!-- pwa -->
+      <!-- pwa（link） -->
       <Link
         href="/splashscreens/iphone5_splash.png"
         media="(device-width: 320px) and (device-height: 568px) and (-webkit-device-pixel-ratio: 2)"

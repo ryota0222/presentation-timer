@@ -1,14 +1,21 @@
 {
-    "name": "Presentation Watch",
-    "short_name": "Presentation Watch",
-    "icons": [
-        {
-            "src": "/android-chrome-144x144.png",
-            "sizes": "144x144",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffffff",
-    "background_color": "#ffffff",
-    "display": "standalone"
+  "name": "Presentation Watch",
+  "short_name": "PresenWatch",
+  "icons": [
+    {
+      "src": "/icon_pwa.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/dashboard",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#222",
+  "theme_color": "#FAFAF9",
+  "description": "プレゼンテーションの時間管理を行うアプリケーションです。同じアカウントでログインしていただくと複数台でも同期的に時間の管理が可能です。",
+  "dir": "ltr",
+  "lang": "ja-jp",
+  "related_applications": [],
+  "prefer_related_applications": false
 }
