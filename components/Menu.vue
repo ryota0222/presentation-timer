@@ -21,7 +21,7 @@ const logout = async () => {
 };
 // テーマが切り替わったらhtmlタグのクラス切り替え
 watchEffect(() => {
-  if (window) {
+  if (process.client) {
     if (selected.value.name === "dark") {
       document.documentElement.classList.add("dark");
     } else {
