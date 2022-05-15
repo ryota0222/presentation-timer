@@ -19,7 +19,7 @@ export default defineNuxtConfig({
   css: ["~/assets/css/tailwind.css"],
   pwa: {
     icon: {
-      source: "/static/icon_pwa.png",
+      source: "/icon_pwa.png",
       fileName: "icon_pwa.png",
     },
     meta: {
@@ -41,7 +41,7 @@ export default defineNuxtConfig({
       start_url: "/",
       icons: [
         {
-          src: "/static/icon_pwa.png",
+          src: "/icon_pwa.png",
           sizes: "512x512",
           type: "image/png",
         },
