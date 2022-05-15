@@ -1,11 +1,9 @@
 <template>
-  <DirectionContext direction="portrait">
-    <AppContainer>
-      <AppHeader />
-      <Spacer />
-      <NuxtPage />
-      <Spacer />
-      <AppFooter />
-    </AppContainer>
-  </DirectionContext>
+  <AppContainer>
+    <AppHeader />
+    <Spacer />
+    <NuxtPage />
+    <Spacer />
+    <AppFooter />
+  </AppContainer>
 </template>
