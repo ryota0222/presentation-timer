@@ -54,5 +54,6 @@ export default defineNuxtConfig({
         },
       },
     },
+    transpile: ["@headlessui/vue"],
   },
 });
