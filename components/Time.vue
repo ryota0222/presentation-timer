@@ -11,7 +11,7 @@ const { days, hours, minutes, seconds, isRunning } = defineProps<Props>();
 
 <template>
   <div
-    :class="`inline-block time-container text-black dark:text-white ${
+    :class="`inline-block time-container font-oswald not-italic font-normal text-5xl text-black dark:text-white ${
       isRunning ? 'opacity-100' : 'opacity-50'
     }`"
   >
@@ -24,10 +24,6 @@ const { days, hours, minutes, seconds, isRunning } = defineProps<Props>();
 
 <style scoped>
 .time-container {
-  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-style: normal;
-  font-weight: 400;
-  font-size: 48px;
   width: 240px;
 }
 </style>
