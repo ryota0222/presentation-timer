@@ -3,11 +3,11 @@ import { Action, LogFetchedDB } from "~/types/log";
 import { useStopwatch } from "vue-timer-hook";
 type Props = {
   offsetTimeStamp: number;
-  initialLog: LogFetchedDB[];
+  initialLog: LogFetchedDB[] | null;
 };
 const props = defineProps<Props>();
 const AUTO_START = false;
-const logs = useState<LogFetchedDB[]>("logs", () => props.initialLog);
+const logs = useState<LogFetchedDB[]>("logs", () => props.initialLog ?? []);
 const stopwatch = useStopwatch(props.offsetTimeStamp, AUTO_START);
 // logの更新
 const updateLog = (data: LogFetchedDB) => {
