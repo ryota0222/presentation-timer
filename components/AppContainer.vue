@@ -92,6 +92,17 @@ const url = "https://presentation-timer.ryotanny.com";
         media="(device-width: 1024px) and (device-height: 1366px) and (-webkit-device-pixel-ratio: 2)"
         rel="apple-touch-startup-image"
       />
+      <!-- link -->
+      <Link rel="preconnect" href="https://fonts.googleapis.com" />
+      <Link
+        rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin="anonymous"
+      />
+      <Link
+        href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap"
+        rel="stylesheet"
+      />
     </Head>
     <div
       class="bg-stone-50 text-stone-900 dark:bg-stone-900 dark:text-stone-50 min-h-screen"
