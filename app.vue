@@ -5,11 +5,13 @@ onMounted(() => {
   $setHeight();
   // イベントの生成
   if (process.client) {
-    window.addEventListener("resize", $setHeight);
+    // ページのサイズの変更時とデバイスの回転時
+    window.addEventListener("resize orientationchange", $setHeight);
   }
 });
 onUnmounted(() => {
-  window.removeEventListener("resize", $setHeight);
+  // ページのサイズの変更時とデバイスの回転時
+  window.removeEventListener("resize orientationchange", $setHeight);
 });
 </script>
 
