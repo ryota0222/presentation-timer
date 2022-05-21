@@ -50,44 +50,32 @@ watchEffect(() => {
               >
               <div class="mx-auto w-full max-w-md">
                 <RadioGroup v-model="selected">
-                  <RadioGroupLabel class="sr-only">Server size</RadioGroupLabel>
+                  <RadioGroupLabel class="sr-only">Color Theme</RadioGroupLabel>
                   <div class="space-y-2">
                     <RadioGroupOption
                       as="template"
                       v-for="theme in themes"
                       :key="theme.name"
                       :value="theme"
-                      v-slot="{ active, checked }"
+                      v-slot="{ checked }"
                     >
                       <div
-                        :class="[
-                          active
-                            ? 'ring-2 ring-white ring-opacity-60 ring-offset-2 ring-offset-gray-300'
-                            : '',
-                          checked
-                            ? 'bg-gray-900 bg-opacity-75 text-white '
-                            : 'bg-white ',
-                        ]"
-                        class="relative flex cursor-pointer rounded-lg p-2 py-3 focus:outline-none"
+                        :class="theme.classes"
+                        class="relative flex cursor-pointer rounded-lg p-2 focus:outline-none"
                       >
-                        <div class="flex w-full items-center justify-between">
-                          <div class="flex items-center">
-                            <CheckIcon :checked="checked" />
+                        <div
+                          class="flex w-full items-center justify-between relative"
+                        >
+                          <div class="absolute right-0 top-0">
+                            <CheckStatusLabel :checked="checked" />
+                          </div>
+                          <div class="flex items-center p-2">
                             <div class="text-sm">
-                              <RadioGroupLabel
-                                as="p"
-                                :class="
-                                  checked ? 'text-white' : 'text-gray-900'
-                                "
-                                class="font-medium"
-                              >
+                              <RadioGroupLabel as="p" class="font-medium">
                                 {{ theme.name }}
                               </RadioGroupLabel>
                               <RadioGroupDescription
                                 as="span"
-                                :class="
-                                  checked ? 'text-gray-100' : 'text-gray-500'
-                                "
                                 class="inline text-xs"
                               >
                                 <span>{{ theme.description }}</span>
