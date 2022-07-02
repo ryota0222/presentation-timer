@@ -71,14 +71,20 @@ watchEffect(() => {
                           </div>
                           <div class="flex items-center p-2">
                             <div class="text-sm">
-                              <RadioGroupLabel as="p" class="font-medium">
+                              <RadioGroupLabel
+                                as="p"
+                                class="font-medium"
+                                :class="theme.textClasses"
+                              >
                                 {{ theme.name }}
                               </RadioGroupLabel>
                               <RadioGroupDescription
                                 as="span"
                                 class="inline text-xs"
                               >
-                                <span>{{ theme.description }}</span>
+                                <span :class="theme.textClasses">{{
+                                  theme.description
+                                }}</span>
                               </RadioGroupDescription>
                             </div>
                           </div>

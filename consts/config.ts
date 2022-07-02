@@ -2,11 +2,13 @@ export const themes = [
   {
     name: "light",
     description: "テーマをライトモードに設定します",
-    classes: "text-gray-900 bg-white border-gray-200 border",
+    classes: "text-stone-900 bg-white border-gray-200 border",
+    textClasses: "text-stone-900 dark:text-stone-900",
   },
   {
     name: "dark",
     description: "テーマをダークモードに設定します",
-    classes: "text-white bg-gray-900",
+    classes: "text-white bg-black",
+    textClasses: "text-white",
   },
 ];
