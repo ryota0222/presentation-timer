@@ -1,8 +1,9 @@
 export interface LogFetchedDB {
-  id: number;
+  id: string;
   action: Action | string;
   user: string;
   created_at: string;
+  timestamp: number;
 }
 
 export type Action =

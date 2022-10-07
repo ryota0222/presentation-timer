@@ -1,38 +1,42 @@
 import { LogFetchedDB, Action } from "~/types/log";
 import { useAuth } from "./useAuth";
-// 設定値
-const OFFSET_TIME_STAMP = 0;
-const AUTO_START = false;
+import useFireStore from "./useFireStore";
 
 export default function () {
   const { user } = useAuth();
-  const { insertRow } = useSupabaseDB();
+  const { insertRow } = useFireStore();
+  const { $dayjs } = useNuxtApp();
   // ログデータの生成
   const generateLogData = (actionObj: Action) => {
-    return { action: JSON.stringify(actionObj), user: user.value.uid };
+    return {
+      action: JSON.stringify(actionObj),
+      user: user.value.uid,
+      created_at: $dayjs().toISOString(),
+      timestamp: $dayjs().unix(),
+    };
   };
   /**
    * 開始処理
    */
   const handleStart = () =>
-    insertRow<Partial<LogFetchedDB>>([generateLogData({ type: "start" })]);
+    insertRow<Partial<LogFetchedDB>>(generateLogData({ type: "start" }));
   /**
    * 停止処理
    */
   const handlePause = (start_at: string) =>
-    insertRow<Partial<LogFetchedDB>>([
-      generateLogData({ type: "pause", start_at }),
-    ]);
+    insertRow<Partial<LogFetchedDB>>(
+      generateLogData({ type: "pause", start_at })
+    );
   /**
    * リスタート処理
    */
   const handleRestart = () =>
-    insertRow<Partial<LogFetchedDB>>([generateLogData({ type: "restart" })]);
+    insertRow<Partial<LogFetchedDB>>(generateLogData({ type: "restart" }));
   /**
    * リセット処理
    */
   const handleReset = () =>
-    insertRow<Partial<LogFetchedDB>>([generateLogData({ type: "reset" })]);
+    insertRow<Partial<LogFetchedDB>>(generateLogData({ type: "reset" }));
 
   return {
     handleStart,

@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { Action, LogFetchedDB } from "~/types/log";
 import { useStopwatch } from "vue-timer-hook";
+import useTimer from "~~/composables/useTimer";
+import useFireStore from "~~/composables/useFireStore";
 type Props = {
   offsetTimeStamp: number;
   initialLog: LogFetchedDB[] | null;
@@ -14,11 +16,10 @@ const updateLog = (data: LogFetchedDB) => {
   logs.value.unshift(data);
 };
 const { handleStart, handlePause, handleRestart, handleReset } = useTimer();
-const { subscribeLogData, removeSubscribeLogData } = useSupabaseDB();
+const { subscribeLogData, removeSubscribeLogData } = useFireStore();
 // マウント時、ログ情報の監視
 onMounted(async () => {
   const callback = (data: LogFetchedDB) => {
-    console.log(data);
     if (logs) {
       updateLog(data);
     }

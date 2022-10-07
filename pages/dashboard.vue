@@ -1,17 +1,19 @@
 <script setup lang="ts">
 import { Action } from "~/types/log";
+import useFireStore from "~~/composables/useFireStore";
+import { useInitialLog } from "~~/composables/useInitialLog";
 definePageMeta({
   middleware: "auth",
 });
 const { $dayjs } = useNuxtApp();
-const { fetchLogData } = useSupabaseDB();
+const { fetchLogData } = useFireStore();
 const { initialLog, setInitialLog } = useInitialLog();
 
 // マウント時、データ取得
 onMounted(async () => {
   const res = await fetchLogData();
 
-  if (res[0] && res[0]?.action) {
+  if (res && res[0] && res[0]?.action) {
     setInitialLog(res);
   } else {
     setInitialLog(null);

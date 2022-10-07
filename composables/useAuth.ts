@@ -15,7 +15,7 @@ const githubProvider = new GithubAuthProvider();
 
 export const useAuth = () => {
   const token = useState<string>("token", () => null);
-  const user = useState<User>("token", () => null);
+  const user = useState<User>("user", () => null);
   // Googleログインの処理
   async function signInWithGoogle() {
     return await new Promise<void>((resolve, reject) => {

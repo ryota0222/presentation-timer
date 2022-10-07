@@ -8,6 +8,7 @@ import {
   RadioGroup,
   RadioGroupLabel,
   RadioGroupOption,
+  RadioGroupDescription,
 } from "@headlessui/vue";
 import { ref } from "vue";
 import { useAuth } from "@/composables/useAuth";
