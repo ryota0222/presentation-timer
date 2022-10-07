@@ -1,7 +1,12 @@
-export default defineNuxtRouteMiddleware(() => {
-  const user = useSupabaseUser();
+import { useAuth } from "@/composables/useAuth";
 
-  if (!user.value) {
-    return navigateTo("/");
+export default defineNuxtRouteMiddleware(async () => {
+  if (!process.server) {
+    const { checkAuthState, user } = useAuth();
+    await checkAuthState();
+    if (!user.value) {
+      // replaceで遷移
+      return await navigateTo("/", { replace: true });
+    }
   }
 });

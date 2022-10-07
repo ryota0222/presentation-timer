@@ -10,13 +10,14 @@ import {
   RadioGroupOption,
 } from "@headlessui/vue";
 import { ref } from "vue";
+import { useAuth } from "@/composables/useAuth";
+
 const selected = ref(themes[0]);
 const router = useRouter();
-const client = useSupabaseClient();
-const user = useSupabaseUser();
+const { signOut, user } = useAuth();
 // ログアウト処理
 const logout = async () => {
-  await client.auth.signOut();
+  await signOut();
   router.push("/");
 };
 // テーマが切り替わったらhtmlタグのクラス切り替え
@@ -96,7 +97,7 @@ watchEffect(() => {
               </div>
             </div>
           </MenuItem>
-          <template v-if="user">
+          <template v-if="user !== null">
             <MenuItem
               as="div"
               class="mt-8 pt-4 border-t-2 border-gray-300 dark:border-gray-600"

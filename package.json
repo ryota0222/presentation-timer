@@ -7,7 +7,6 @@
     "preview": "nuxt preview"
   },
   "devDependencies": {
-    "@nuxtjs/supabase": "^0.1.11",
     "@nuxtjs/tailwindcss": "^5.0.4",
     "autoprefixer": "^10.4.7",
     "nuxt": "3.0.0-rc.1",
@@ -18,6 +17,7 @@
     "@headlessui/vue": "^1.6.1",
     "@nuxtjs/pwa": "^3.3.5",
     "dayjs": "^1.11.2",
+    "firebase": "^9.10.0",
     "vue-timer-hook": "^1.0.0"
   }
 }

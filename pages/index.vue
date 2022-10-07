@@ -1,6 +1,8 @@
 <script setup lang="ts">
-const { auth } = useSupabaseClient();
-const user = useSupabaseUser();
+import { useAuth } from "@/composables/useAuth";
+
+const { user, signInWithGitHub, signInWithGoogle, signInWithTwitter } =
+  useAuth();
 
 watchEffect(() => {
   if (user.value) {
@@ -15,7 +17,7 @@ watchEffect(() => {
     <div class="mt-12 max-w-xs mx-auto flex flex-col space-y-4">
       <!-- GitHub -->
       <button
-        @click="auth.signIn({ provider: 'github' })"
+        @click="signInWithGitHub"
         class="flex justify-center items-center bg-black dark:bg-white p-3 rounded-md"
       >
         <GithubIcon class="fill-white dark:fill-black mr-4" />
@@ -23,7 +25,7 @@ watchEffect(() => {
       </button>
       <!-- Twitter -->
       <button
-        @click="auth.signIn({ provider: 'twitter' })"
+        @click="signInWithTwitter"
         class="flex justify-center items-center bg-sky-500 p-3 rounded-md"
       >
         <img src="@/assets/images/twitter.svg" alt="twitter" class="mr-4" />
@@ -31,7 +33,7 @@ watchEffect(() => {
       </button>
       <!-- Google -->
       <button
-        @click="auth.signIn({ provider: 'google' })"
+        @click="signInWithGoogle"
         class="flex justify-center items-center bg-white dark:bg-black p-3 rounded-md border-2 border-black dark:border-white"
       >
         <img src="@/assets/images/google.svg" alt="google" class="mr-4" />

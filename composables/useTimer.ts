@@ -1,14 +1,15 @@
 import { LogFetchedDB, Action } from "~/types/log";
+import { useAuth } from "./useAuth";
 // 設定値
 const OFFSET_TIME_STAMP = 0;
 const AUTO_START = false;
 
 export default function () {
-  const user = useSupabaseUser();
+  const { user } = useAuth();
   const { insertRow } = useSupabaseDB();
   // ログデータの生成
   const generateLogData = (actionObj: Action) => {
-    return { action: JSON.stringify(actionObj), user: user.value.id };
+    return { action: JSON.stringify(actionObj), user: user.value.uid };
   };
   /**
    * 開始処理

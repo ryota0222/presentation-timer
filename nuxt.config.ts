@@ -16,7 +16,6 @@ export default defineNuxtConfig({
     ],
   },
   modules: ["@nuxtjs/pwa"],
-  buildModules: ["@nuxtjs/supabase"],
   css: ["~/assets/css/tailwind.css"],
   pwa: {
     icon: {
