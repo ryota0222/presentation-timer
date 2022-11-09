@@ -6,7 +6,7 @@ const url = "https://tsunagaru-timer.ryotanny.com";
 </script>
 
 <template>
-  <Html lang="ja">
+  <Html lang="ja" prefix="og: http://ogp.me/ns#">
     <Head>
       <Title>{{ title }}</Title>
       <Meta name="description" :content="description" />
