@@ -25,13 +25,15 @@ export default defineNuxtConfig({
       appId: process.env.APP_ID,
     },
   },
-  modules: ["@nuxtjs/pwa"],
+  buildModules: ["@nuxtjs/pwa"],
   css: ["~/assets/css/tailwind.css"],
   pwa: {
-    icon: {
-      source: "/icon_pwa.png",
-      fileName: "icon_pwa.png",
+    manifest: {
+      useWebmanifestExtension: true,
     },
+  },
+  meta: {
+    mobileAppIOS: false,
   },
   build: {
     postcss: {
