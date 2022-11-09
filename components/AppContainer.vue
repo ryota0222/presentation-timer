@@ -1,8 +1,8 @@
 <script setup lang="ts">
-const title = "Presentation Watch";
+const title = "つながるTIMER";
 const description =
   "プレゼンテーションの時間管理を行うアプリケーションです。同じアカウントでログインしていただくと複数台でも同期的に時間の管理が可能です。";
-const url = "https://presentation-timer.ryotanny.com";
+const url = "https://tsunagaru-timer.ryotanny.com";
 </script>
 
 <template>

@@ -1,4 +1,4 @@
-# :alarm_clock: Presentation Watch
+# :alarm_clock: つながる TIMER
 
 プレゼンテーションの時間管理を行うアプリケーションです。同じアカウントでログインしていただくと複数台でも同期的に時間の管理が可能です。
 
