@@ -14,7 +14,7 @@ const classes =
 <template>
   <button
     @click="props.onClick"
-    :class="`rounded px-4 py-1 app-button ${classes}`"
+    :class="`rounded px-4 py-2 app-button ${classes}`"
   >
     <slot />
   </button>
