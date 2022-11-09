@@ -10,9 +10,11 @@ module.exports = {
   theme: {
     minHeight: {
       screen: "calc(var(--vh, 1vh) * 100)",
+      screenDvh: "100dvh",
     },
     fontFamily: {
       oswald: "'Oswald', sans-serif",
+      hiragino: "Hiragino Kaku Gothic ProN",
     },
   },
 };
