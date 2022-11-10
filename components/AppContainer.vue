@@ -18,7 +18,7 @@ const url = "https://tsunagaru-timer.ryotanny.com";
       <Meta property="og:description" :content="description" />
       <Meta
         property="og:image"
-        content="https://tsunagaru-timer.ryotanny.com//og-image.png"
+        content="https://tsunagaru-timer.ryotanny.com/og-image.png"
       />
       <Meta property="og:site_name" :content="title" />
       <!-- pwa（meta） -->
