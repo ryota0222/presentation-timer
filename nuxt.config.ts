@@ -9,6 +9,9 @@ export default defineNuxtConfig({
     typeCheck: true,
   },
   head: {
+    htmlAttrs: {
+      prefix: "og: http://ogp.me/ns#",
+    },
     title: "つながるTIMER",
     meta: [
       { charset: "utf-8" },
