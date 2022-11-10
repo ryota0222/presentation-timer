@@ -11,11 +11,15 @@ const url = "https://tsunagaru-timer.ryotanny.com";
       <Title>{{ title }}</Title>
       <Meta name="description" :content="description" />
       <Meta name="twitter:card" content="summary_large_image" />
+      <Meta name="twitter:site" content="@RyoTa___0222" />
       <Meta property="og:type" content="website" />
       <Meta property="og:title" :content="title" />
       <Meta property="og:url" :content="url" />
       <Meta property="og:description" :content="description" />
-      <Meta property="og:image" content="/og-image.png" />
+      <Meta
+        property="og:image"
+        content="https://tsunagaru-timer.ryotanny.com//og-image.png"
+      />
       <Meta property="og:site_name" :content="title" />
       <!-- pwa（meta） -->
       <Meta name="mobile-web-app-capable" content="yes" />
