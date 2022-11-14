@@ -1,11 +1,13 @@
 <script setup lang="ts">
 const { $setHeight } = useNuxtApp();
+const route = useRoute();
 useHead({
   titleTemplate: (titleChunk) => {
     return titleChunk?.length
       ? `${titleChunk} | つながるTIMER`
       : "つながるTIMER";
   },
+  meta: [{ property: "og:title", content: `${route.meta.title}` }],
 });
 onMounted(() => {
   // vhの値の保存
