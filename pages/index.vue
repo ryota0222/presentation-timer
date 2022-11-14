@@ -1,3 +1,9 @@
+<script setup lang="ts">
+useHead({
+  title: "",
+});
+</script>
+
 <template>
   <div class="w-full flex flex-col items-center">
     <div class="img-box" role="presentation">

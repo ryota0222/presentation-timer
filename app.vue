@@ -2,7 +2,9 @@
 const { $setHeight } = useNuxtApp();
 useHead({
   titleTemplate: (titleChunk) => {
-    return titleChunk ? `${titleChunk} | つながるTIMER` : "つながるTIMER";
+    return titleChunk?.length
+      ? `${titleChunk} | つながるTIMER`
+      : "つながるTIMER";
   },
 });
 onMounted(() => {
