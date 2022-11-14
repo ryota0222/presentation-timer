@@ -7,7 +7,6 @@ useHead({
       ? `${titleChunk} | つながるTIMER`
       : "つながるTIMER";
   },
-  meta: [{ property: "og:title", content: `${route.meta.title}` }],
 });
 onMounted(() => {
   // vhの値の保存
