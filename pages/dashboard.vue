@@ -2,10 +2,9 @@
 import { Action } from "~/types/log";
 import useFireStore from "~~/composables/useFireStore";
 import { useInitialLog } from "~~/composables/useInitialLog";
-import { META_TITLE } from "~~/consts/config";
 
 useHead({
-  title: `ダッシュボード | ${META_TITLE}`,
+  title: `ダッシュボード`,
 });
 
 definePageMeta({

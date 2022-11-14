@@ -1,9 +1,8 @@
 <script setup lang="ts">
 import { useAuth } from "@/composables/useAuth";
-import { META_TITLE } from "~~/consts/config";
 
 useHead({
-  title: `ログイン | ${META_TITLE}`,
+  title: `ログイン`,
 });
 
 const { user, signInWithGitHub, signInWithGoogle, signInWithTwitter } =

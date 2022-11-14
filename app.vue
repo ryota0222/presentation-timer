@@ -1,5 +1,10 @@
 <script setup lang="ts">
 const { $setHeight } = useNuxtApp();
+useHead({
+  titleTemplate: (titleChunk) => {
+    return titleChunk ? `${titleChunk} | つながるTIMER` : "つながるTIMER";
+  },
+});
 onMounted(() => {
   // vhの値の保存
   $setHeight();
