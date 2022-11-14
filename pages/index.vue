@@ -1,13 +1,7 @@
 <template>
   <div class="w-full flex flex-col items-center">
     <div class="img-box" role="presentation">
-      <img
-        src="/images/logo.svg"
-        alt="logo"
-        class="mr-2"
-        width="64"
-        height="64"
-      />
+      <img src="/images/logo.svg" alt="logo" width="64" height="64" />
     </div>
     <p class="mt-12 mx-auto">
       アプリについては
