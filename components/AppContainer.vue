@@ -8,7 +8,6 @@ const url = "https://tsunagaru-timer.ryotanny.com";
 <template>
   <Html lang="ja" prefix="og: http://ogp.me/ns#">
     <Head>
-      <Title>{{ title }}</Title>
       <Meta name="description" :content="description" />
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:site" content="@RyoTa___0222" />
