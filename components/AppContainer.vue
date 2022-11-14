@@ -1,31 +1,28 @@
 <script setup lang="ts">
-const title = "つながるTIMER";
-const description =
-  "プレゼンテーションの時間管理を行うアプリケーションです。同じアカウントでログインしていただくと複数台でも同期的に時間の管理が可能です。";
-const url = "https://tsunagaru-timer.ryotanny.com";
+import { META_TITLE, META_DESCRIPTION, META_URL } from "~~/consts/config";
 </script>
 
 <template>
   <Html lang="ja" prefix="og: http://ogp.me/ns#">
     <Head>
-      <Title>{{ title }}</Title>
-      <Meta name="description" :content="description" />
+      <Title>{{ META_TITLE }}</Title>
+      <Meta name="description" :content="META_DESCRIPTION" />
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:site" content="@RyoTa___0222" />
       <Meta property="og:type" content="website" />
-      <Meta property="og:title" :content="title" />
-      <Meta property="og:url" :content="url" />
-      <Meta property="og:description" :content="description" />
+      <Meta property="og:title" :content="META_TITLE" />
+      <Meta property="og:url" :content="META_URL" />
+      <Meta property="og:description" :content="META_DESCRIPTION" />
       <Meta
         property="og:image"
         content="https://tsunagaru-timer.ryotanny.com/og-image.png"
       />
-      <Meta property="og:site_name" :content="title" />
+      <Meta property="og:site_name" :content="META_TITLE" />
       <!-- pwa（meta） -->
       <Meta name="mobile-web-app-capable" content="yes" />
       <Meta name="apple-mobile-web-app-capable" content="yes" />
       <Meta name="apple-mobile-web-app-status-bar-style" content="black" />
-      <Meta name="apple-mobile-web-app-title" :content="title" />
+      <Meta name="apple-mobile-web-app-title" :content="META_TITLE" />
       <Link
         rel="apple-touch-icon"
         size="152x152"

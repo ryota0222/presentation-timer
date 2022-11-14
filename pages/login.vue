@@ -1,5 +1,15 @@
 <script setup lang="ts">
+import { defineNuxtConfig } from "nuxt";
 import { useAuth } from "@/composables/useAuth";
+import { META_TITLE } from "~~/consts/config";
+
+defineNuxtConfig({
+  app: {
+    head: {
+      title: `ログイン | ${META_TITLE}`,
+    },
+  },
+});
 
 const { user, signInWithGitHub, signInWithGoogle, signInWithTwitter } =
   useAuth();
