@@ -3,6 +3,7 @@ import { useAuth } from "@/composables/useAuth";
 
 useHead({
   title: `ログイン`,
+  meta: [{ property: "og:title", content: "ログイン | つながるTIMER" }],
 });
 
 const { user, signInWithGitHub, signInWithGoogle, signInWithTwitter } =
