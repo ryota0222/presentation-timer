@@ -12,7 +12,6 @@ const url = "https://tsunagaru-timer.ryotanny.com";
       <Meta name="twitter:card" content="summary_large_image" />
       <Meta name="twitter:site" content="@RyoTa___0222" />
       <Meta property="og:type" content="website" />
-      <Meta property="og:title" :content="title" />
       <Meta property="og:url" :content="url" />
       <Meta property="og:description" :content="description" />
       <Meta
