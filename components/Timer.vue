@@ -108,6 +108,9 @@ watchEffect(() => {
           </template>
         </template>
       </template>
+      <p v-else class="view-mode-text-wrapper">
+        閲覧モードに設定されています。別の端末で計測に関する操作を行います。
+      </p>
     </div>
     <!-- !ログ一覧：開発中のみ利用 -->
     <!-- <ul v-if="logs.length">
@@ -133,5 +136,8 @@ watchEffect(() => {
   .timer-container .time-wrapper {
     margin-right: 40px;
   }
+}
+.view-mode-text-wrapper {
+  max-width: 320px;
 }
 </style>
